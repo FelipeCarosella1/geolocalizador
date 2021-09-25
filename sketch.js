@@ -17,18 +17,9 @@ function setup() {
         /* geolocation IS NOT available */
         console.log('geolocation NO funcionando');
     };
-    var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: {lat: lat, lng: lon}
-        });
 
-    var image = 'agua_enojada.jpg';
-    var beachMarker = new google.maps.Marker({
-          position: {lat: lat, lng: lon},
-          map: map,
-          icon: image
-      });
 createCanvas(200,200); // crea el linezo de 200x200
+initMap()
   }
   
 function draw () {
@@ -38,3 +29,15 @@ text(lat,85,30); // imprime variable en posicion x,y
 text("longitud",20,50); // imprime el texto en posicion x,y
 text(lon,85,50); // imprime variable en posicion x,y
   }
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: { lat: lat, lng: lon },
+  });
+  var image ="agua_enojada.jpg";
+  const beachMarker = new google.maps.Marker({
+    position: { lat: lat, lng: lon },
+    map,
+    icon: image,
+  });
+}
