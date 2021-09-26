@@ -3,6 +3,7 @@ var lon; // variable de longitud
 let canvas;
 function setup() {
     canvas = createCanvas(200,200); // crea el linezo de 200x200}
+
     if('geolocation' in navigator) {
         /* geolocation is available */
         console.log('geolocation funcionando');
@@ -24,10 +25,10 @@ function setup() {
         }
         myMap = mappa.tileMap(options);
         myMap.overlay(canvas);
+        });
     } else {
         /* geolocation IS NOT available */
         console.log('geolocation NO funcionando');
-        });
     };
     console.log(lon);
     }
