@@ -29,7 +29,7 @@ function setup() {
     };
     console.log(lon);
     canvas = createCanvas(200,200); // crea el linezo de 200x200}
-  
+    }
 function draw () {
 textSize(16); // fija el tamaño del texto
 text("latitud",20,30); // imprime el texto en posicion x, y 
