@@ -174,8 +174,8 @@ function initMap() {
     let myMap;
     const mappa = new Mappa('Google', key);
     const options = {
-    lat: lat,
-    lng: lon,
+    lat: 2,
+    lng: 2,
     zoom: 3,
     styles: style,
 };
