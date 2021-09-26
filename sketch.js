@@ -19,7 +19,7 @@ function setup() {
     };
 
 canvas = createCanvas(200,200); // crea el linezo de 200x200
-initMap(lati,lon)
+Map(lati,lon)
   }
   
 function draw () {
@@ -30,7 +30,7 @@ text("longitud",20,50); // imprime el texto en posicion x,y
 text(lon,85,50); // imprime variable en posicion x,y
   }
 
-function initMap(lati,lon) {
+function Map(lati,lon) {
     let myMap;
     console.log(lati)
     const mappa = new Mappa('Leaflet');;
