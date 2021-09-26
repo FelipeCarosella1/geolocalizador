@@ -9,9 +9,9 @@ function setup() {
         // getCurrentPosition() se usa para obtener la posicion de un dispositivo 
         navigator.geolocation.getCurrentPosition(async position => {
             // console.log(position);
-            lat = position.coords.latitude; // obtenemos latitud
+            lati = position.coords.latitude; // obtenemos latitud
             lon = position.coords.longitude; // obtenermos longitud
-            console.log(lat.toFixed(2)); // visualizamos latitud en modo progrmador
+            console.log(lati.toFixed(2)); // visualizamos latitud en modo progrmador
             console.log(lon); // visualizamos longitud en modo programador 
                     });
     } else {
@@ -26,7 +26,7 @@ initMap()
 function draw () {
 textSize(16); // fija el tamaño del texto
 text("latitud",20,30); // imprime el texto en posicion x, y 
-text(lat,85,30); // imprime variable en posicion x,y
+text(lati,85,30); // imprime variable en posicion x,y
 text("longitud",20,50); // imprime el texto en posicion x,y
 text(lon,85,50); // imprime variable en posicion x,y
   }
