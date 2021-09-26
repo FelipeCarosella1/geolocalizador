@@ -41,7 +41,7 @@ function initMap(lati,lon){
     }
     myMap = mappa.tileMap(options);
     myMap.overlay(canvas);
-    myMap.marker([lati, lon]).addTo(map)
+    mappa.marker([lati, lon]).addTo(myMap)
     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
     .openPopup();
 }
