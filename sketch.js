@@ -13,14 +13,22 @@ function setup() {
             console.log(lati.toFixed(2)); // visualizamos latitud en modo progrmador
             console.log(lon); // visualizamos longitud en modo programador 
                     });
+        let myMap;
+        const mappa = new Mappa('Leaflet');;
+        const options = {
+        lat: lati,
+        lng: lon,
+        zoom: 4,
+        style: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+        }
+        myMap = mappa.tileMap(options);
+        myMap.overlay(canvas);
     } else {
         /* geolocation IS NOT available */
         console.log('geolocation NO funcionando');
     };
- console.log(lon);
-canvas = createCanvas(200,200); // crea el linezo de 200x200
-initMap(lati,lon)
-  }
+    console.log(lon);
+    canvas = createCanvas(200,200); // crea el linezo de 200x200}
   
 function draw () {
 textSize(16); // fija el tamaño del texto
@@ -30,15 +38,3 @@ text("longitud",20,50); // imprime el texto en posicion x,y
 text(lon,85,50); // imprime variable en posicion x,y
   }
 
-function initMap() {
-    let myMap;
-    const mappa = new Mappa('Leaflet');;
-    const options = {
-    lat: lati,
-    lng: lon,
-    zoom: 4,
-    style: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-    }
-    myMap = mappa.tileMap(options);
-    myMap.overlay(canvas);
-}
