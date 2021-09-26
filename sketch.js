@@ -3,7 +3,7 @@ var lon; // variable de longitud
 let canvas;
 let myMap;
 function setup() {
-    canvas = createCanvas(200,200); // crea el linezo de 200x200}
+    canvas = createCanvas(displayWidth,displayHeight); // crea el linezo de 200x200}
 
     if('geolocation' in navigator) {
         /* geolocation is available */
@@ -48,5 +48,5 @@ function initMap(lati,lon){
 function marcador(){
     let marcador = myMap.latLngToPixel(lati,lon);
     imagen = createImg("agua_enojada.jpg");
-    imagen.position(marcador.x,marcador.y)
+    image(imagen,marcador.x,marcador.y,80,80)
 }
