@@ -42,7 +42,7 @@ function initMap(lati,lon){
     }
     myMap = mappa.tileMap(options);
     myMap.overlay(canvas);
-    
+    marcador();
     myMap.onChange(marcador);
 }
 
@@ -50,5 +50,6 @@ function marcador(){
     clear()
     let marcador = myMap.latLngToPixel(lati,lon);
     imagen = createImg("agua_enojada.jpg");
-    image(imagen,marcador.x,marcador.y,20,20)
+    imagen.hide();
+    image(imagen,marcador.x,marcador.y,30,30);
 }
