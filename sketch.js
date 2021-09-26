@@ -13,7 +13,7 @@ function setup() {
             lon = position.coords.longitude; // obtenermos longitud
             console.log(lati.toFixed(2)); // visualizamos latitud en modo progrmador
             console.log(lon); // visualizamos longitud en modo programador 
-                    });
+                    
         let myMap;
         const mappa = new Mappa('Leaflet');;
         const options = {
@@ -27,6 +27,7 @@ function setup() {
     } else {
         /* geolocation IS NOT available */
         console.log('geolocation NO funcionando');
+        });
     };
     console.log(lon);
     }
