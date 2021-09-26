@@ -35,8 +35,8 @@ function initMap() {
     let myMap;
     const mappa = new Mappa('Leaflet');;
     const options = {
-    lat: 0,
-    lng: 0,
+    lat: lat,
+    lng: lon,
     zoom: 4,
     style: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
     }
