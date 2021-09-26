@@ -22,14 +22,15 @@ function setup() {
         console.log('geolocation NO funcionando');
     };
     console.log(lon);
+    myMap.onChange(marcador);
     }
+
 function draw () {
 textSize(16); // fija el tamaño del texto
 text("latitud",20,30); // imprime el texto en posicion x, y 
 text(lati,85,30); // imprime variable en posicion x,y
 text("longitud",20,50); // imprime el texto en posicion x,y
 text(lon,85,50); // imprime variable en posicion x,y
-myMap.onChange(marcador)
   }
 
 function initMap(lati,lon){
