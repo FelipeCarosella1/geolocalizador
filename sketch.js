@@ -37,7 +37,7 @@ function initMap(lati,lon){
     const options = {
     lat: lati,
     lng: lon,
-    zoom: 5,
+    zoom: 6,
     style: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
     }
     myMap = mappa.tileMap(options);
