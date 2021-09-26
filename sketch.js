@@ -37,7 +37,7 @@ function initMap(lati,lon){
     const options = {
     lat: lati,
     lng: lon,
-    zoom: 14,
+    zoom: 12,
     style: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
     }
     myMap = mappa.tileMap(options);
@@ -51,5 +51,5 @@ function marcador(){
     let marcador = myMap.latLngToPixel(lati,lon);
     imagen = createImg("agua_enojada.jpg");
     imagen.hide();
-    image(imagen,marcador.x,marcador.y,30,30);
+    image(imagen,marcador.x,marcador.y,35,35);
 }
