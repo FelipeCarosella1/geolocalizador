@@ -17,9 +17,9 @@ function setup() {
         /* geolocation IS NOT available */
         console.log('geolocation NO funcionando');
     };
-
+ console.log(lon);
 canvas = createCanvas(200,200); // crea el linezo de 200x200
-Map(lati,lon)
+initMap(lati,lon)
   }
   
 function draw () {
@@ -30,9 +30,8 @@ text("longitud",20,50); // imprime el texto en posicion x,y
 text(lon,85,50); // imprime variable en posicion x,y
   }
 
-function Map(lati,lon) {
+function initMap() {
     let myMap;
-    console.log(lati)
     const mappa = new Mappa('Leaflet');;
     const options = {
     lat: lati,
