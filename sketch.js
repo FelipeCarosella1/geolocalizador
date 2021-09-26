@@ -33,7 +33,7 @@ text(lon,85,50); // imprime variable en posicion x,y
 
 function initMap() {
     let myMap;
-    print(lati)
+    console.log(lati)
     const mappa = new Mappa('Leaflet');;
     const options = {
     lat: lati,
