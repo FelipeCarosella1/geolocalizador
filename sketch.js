@@ -46,6 +46,7 @@ function initMap(lati,lon){
 }
 
 function marcador(){
+    clear()
     let marcador = myMap.latLngToPixel(lati,lon);
     imagen = createImg("agua_enojada.jpg");
     image(imagen,marcador.x,marcador.y,80,80)
