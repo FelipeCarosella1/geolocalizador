@@ -1,6 +1,5 @@
-
-var lati; // variable de latitud
-var lon; // variable de longitud
+let lati; // variable de latitud
+let lon; // variable de longitud
 let canvas;
 function setup() {
     if('geolocation' in navigator) {
@@ -20,7 +19,7 @@ function setup() {
     };
 
 canvas = createCanvas(200,200); // crea el linezo de 200x200
-initMap()
+initMap(lati,lon)
   }
   
 function draw () {
@@ -31,7 +30,7 @@ text("longitud",20,50); // imprime el texto en posicion x,y
 text(lon,85,50); // imprime variable en posicion x,y
   }
 
-function initMap() {
+function initMap(lati,lon) {
     let myMap;
     console.log(lati)
     const mappa = new Mappa('Leaflet');;
