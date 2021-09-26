@@ -14,18 +14,8 @@ function setup() {
             lon = position.coords.longitude; // obtenermos longitud
             console.log(lati.toFixed(2)); // visualizamos latitud en modo progrmador
             console.log(lon); // visualizamos longitud en modo programador 
-                    
-        let myMap;
-        const mappa = new Mappa('Leaflet');;
-        const options = {
-        lat: lati,
-        lng: lon,
-        zoom: 4,
-        style: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-        }
-        myMap = mappa.tileMap(options);
-        myMap.overlay(canvas);
-        });
+            initMap(lati,lon)
+            });
     } else {
         /* geolocation IS NOT available */
         console.log('geolocation NO funcionando');
@@ -40,3 +30,15 @@ text("longitud",20,50); // imprime el texto en posicion x,y
 text(lon,85,50); // imprime variable en posicion x,y
   }
 
+function initMap(lati,lon){
+    let myMap;
+    const mappa = new Mappa('Leaflet');;
+    const options = {
+    lat: lati,
+    lng: lon,
+    zoom: 4,
+    style: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+    }
+    myMap = mappa.tileMap(options);
+    myMap.overlay(canvas);
+}
