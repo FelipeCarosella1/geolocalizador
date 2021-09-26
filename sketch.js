@@ -22,6 +22,7 @@ function setup() {
         console.log('geolocation NO funcionando');
     };
     console.log(lon);
+    myMap.overlay(canvas);
     myMap.onChange(marcador);
     }
 
@@ -42,7 +43,6 @@ function initMap(lati,lon){
     style: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
     }
     myMap = mappa.tileMap(options);
-    myMap.overlay(canvas);
 }
 
 function marcador(){
