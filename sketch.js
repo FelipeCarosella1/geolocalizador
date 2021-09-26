@@ -1,5 +1,5 @@
 
-var lat; // variable de latitud
+var lati; // variable de latitud
 var lon; // variable de longitud
 let canvas;
 function setup() {
@@ -33,9 +33,10 @@ text(lon,85,50); // imprime variable en posicion x,y
 
 function initMap() {
     let myMap;
+    print(lat)
     const mappa = new Mappa('Leaflet');;
     const options = {
-    lat: lat,
+    lat: lati,
     lng: lon,
     zoom: 4,
     style: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
