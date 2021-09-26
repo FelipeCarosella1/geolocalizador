@@ -41,7 +41,8 @@ function initMap(lati,lon){
     }
     myMap = mappa.tileMap(options);
     myMap.overlay(canvas);
-    myMap.marker([lati, lon]).addTo(mappa)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
+    let marcador = myMap.latLngToPixel(lati,long);
+    imagen = createImg("agua_enojada.jpg");
+    imagen.position(marcador.x,marcador.y)
+
 }
