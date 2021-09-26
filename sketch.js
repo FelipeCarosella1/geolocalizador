@@ -1,5 +1,5 @@
-let lati; // variable de latitud
-let lon; // variable de longitud
+var lati; // variable de latitud
+var lon; // variable de longitud
 let canvas;
 function setup() {
     if('geolocation' in navigator) {
