@@ -1,6 +1,7 @@
 var lati; // variable de latitud
 var lon; // variable de longitud
 let canvas;
+let myMap;
 function setup() {
     canvas = createCanvas(200,200); // crea el linezo de 200x200}
 
@@ -28,10 +29,10 @@ text("latitud",20,30); // imprime el texto en posicion x, y
 text(lati,85,30); // imprime variable en posicion x,y
 text("longitud",20,50); // imprime el texto en posicion x,y
 text(lon,85,50); // imprime variable en posicion x,y
+myMap.onChange(marcador)
   }
 
 function initMap(lati,lon){
-    let myMap;
     const mappa = new Mappa('Leaflet');;
     const options = {
     lat: lati,
@@ -41,8 +42,10 @@ function initMap(lati,lon){
     }
     myMap = mappa.tileMap(options);
     myMap.overlay(canvas);
+}
+
+function marcador(){
     let marcador = myMap.latLngToPixel(lati,lon);
     imagen = createImg("agua_enojada.jpg");
     imagen.position(marcador.x,marcador.y)
-
 }
