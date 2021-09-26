@@ -2,6 +2,7 @@ var lati; // variable de latitud
 var lon; // variable de longitud
 let canvas;
 function setup() {
+    canvas = createCanvas(200,200); // crea el linezo de 200x200}
     if('geolocation' in navigator) {
         /* geolocation is available */
         console.log('geolocation funcionando');
@@ -28,7 +29,6 @@ function setup() {
         console.log('geolocation NO funcionando');
     };
     console.log(lon);
-    canvas = createCanvas(200,200); // crea el linezo de 200x200}
     }
 function draw () {
 textSize(16); // fija el tamaño del texto
