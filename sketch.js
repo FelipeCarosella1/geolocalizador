@@ -42,7 +42,7 @@ function initMap(lati,lon){
     }
     myMap = mappa.tileMap(options);
     myMap.overlay(canvas);
-    marcador()
+    
     myMap.onChange(marcador);
 }
 
