@@ -173,7 +173,12 @@ function initMap() {
 }];
     let myMap;
     const mappa = new Mappa('Google', key);
-
+    const options = {
+    lat: lat,
+    lng: lon,
+    zoom: 3,
+    styles: style,
+};
     myMap = mappa.tileMap(options);
     myMap.overlay(canvas);
 }
