@@ -62,7 +62,7 @@ function marcador(){
 }
 
 function leerArchivo() {
-        var data = $.csv.toObjects(csv):
+        var data = $.csv.toObjects(csv);
         print(data)
 
 }
