@@ -67,7 +67,7 @@ function marcador(){
         let marcador = myMap.latLngToPixel(lat[i],lon[i]);
         print(lat[i],lon[i])
         imagen.push(createImg("agua_enojada.jpg"));
-        imagen[imagen.length].hide();
-        image(imagen[imagen.length],marcador.x,marcador.y,35,35);
+        imagen[(imagen.length)-1].hide();
+        image(imagen[(imagen.length)-1],marcador.x,marcador.y,35,35);
     }
 }
