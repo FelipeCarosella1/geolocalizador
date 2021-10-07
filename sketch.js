@@ -2,9 +2,15 @@ var lati; // variable de latitud
 var lon; // variable de longitud
 let canvas;
 let myMap;
+var archivo
+
+function preload () {
+// lee el archivo de texto y coloca su contenido en una 
+// matriz de cadena con un elemento de matriz por linea en un archivo fuente
+  archivo = loadStrings ('cordenadas.csv'); // siempre debe estar en preload para que funcione
+}
 function setup() {
     canvas = createCanvas(displayWidth,displayHeight); // crea el linezo de 200x200}
-
     if('geolocation' in navigator) {
         /* geolocation is available */
         console.log('geolocation funcionando');
@@ -22,6 +28,7 @@ function setup() {
         console.log('geolocation NO funcionando');
     };
     console.log(lon);
+    leerArchivo()
     }
 
 function draw () {
@@ -52,4 +59,17 @@ function marcador(){
     imagen = createImg("agua_enojada.jpg");
     imagen.hide();
     image(imagen,marcador.x,marcador.y,35,35);
+}
+
+function leerArchivo() {
+  var allRows = archivo.split(/\r?\n|\r/);
+  for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+    var rowCells = allRows[singleRow].split(',');
+    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+      if (!(singleRow === 0)) {
+        print(rowCells[rowCell]);
+        
+      }
+    }
+  } 
 }
