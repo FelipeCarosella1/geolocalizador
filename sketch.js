@@ -45,8 +45,8 @@ text(lon,85,50); // imprime variable en posicion x,y
 function initMap(){
     const mappa = new Mappa('Leaflet');;
     const options = {
-    lat: 47.1443,
-    lng: -122.1408,
+    lat: -34.6075682,
+    lng: -58.4370894,
     zoom: 8,
     style: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
     }
