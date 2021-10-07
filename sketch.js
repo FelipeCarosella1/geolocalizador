@@ -24,6 +24,7 @@ function setup() {
         console.log('geolocation NO funcionando');
     };
     console.log(lon);
+    leerArchivo()
     }
 
 function draw () {
