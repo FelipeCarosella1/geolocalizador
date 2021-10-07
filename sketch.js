@@ -9,7 +9,7 @@ function preload() {
 // el primer comoponete es el archivo csv , el segundo es el tipo de archivo
 // el tercer componente es el encabezado del archivo exel de datos csv
 // asi los datos estaran cargados antes de ejecutar las demas instrucciones
-  datos = loadTable("uscities.csv", "csv", "header"); // almacenamos los datos en la variable
+  datos = loadTable("cordenadas.csv", "csv", "header"); // almacenamos los datos en la variable
 }
 
 function setup() {
