@@ -58,6 +58,7 @@ function marcador(){
     imagen.hide();
     image(imagen,marcador.x,marcador.y,35,35);
 }
+
 function leerArchivo(data) {
   var allRows = data.split(/\r?\n|\r/);
   for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
