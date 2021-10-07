@@ -45,8 +45,8 @@ text(lon,85,50); // imprime variable en posicion x,y
 function initMap(){
     const mappa = new Mappa('Leaflet');;
     const options = {
-    lat: -34,
-    lng: -58,
+    lat: 47.1443,
+    lng: -122.1408,
     zoom: 8,
     style: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
     }
@@ -65,6 +65,7 @@ function marcador(){
     // ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
     for (let i = 0; i < numRows; i++) {
         let marcador = myMap.latLngToPixel(lat[i],lon[i]);
+        print(lat[i],lon[i])
         imagen = createImg("agua_enojada.jpg");
         imagen.hide();
         image(imagen,marcador.x,marcador.y,35,35);
