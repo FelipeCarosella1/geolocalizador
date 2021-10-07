@@ -62,14 +62,7 @@ function marcador(){
 }
 
 function leerArchivo() {
-  var allRows = archivo.split(/\r?\n|\r/);
-  for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
-    var rowCells = allRows[singleRow].split(',');
-    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
-      if (!(singleRow === 0)) {
-        print(rowCells[rowCell]);
-        
-      }
-    }
-  } 
+        var data = $.csv.toObjects(csv):
+        print(data)
+
 }
