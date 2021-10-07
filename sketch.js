@@ -68,5 +68,5 @@ function marcador(){
         imagen = createImg("agua_enojada.jpg");
         imagen.hide();
         image(imagen,marcador.x,marcador.y,35,35);
+    }
 }
-
