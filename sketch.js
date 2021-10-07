@@ -2,8 +2,8 @@ var lati; // variable de latitud
 var lon; // variable de longitud
 let canvas;
 let myMap;
-var archivo
 let datos; // variable que almacena los datos del archivo CSV
+let imagen = []
 
 function preload() {
 // el primer comoponete es el archivo csv , el segundo es el tipo de archivo
@@ -66,8 +66,8 @@ function marcador(){
     for (let i = 0; i < numRows; i++) {
         let marcador = myMap.latLngToPixel(lat[i],lon[i]);
         print(lat[i],lon[i])
-        imagen = createImg("agua_enojada.jpg");
-        imagen.hide();
-        image(imagen,marcador.x,marcador.y,35,35);
+        imagen.push(createImg("agua_enojada.jpg"));
+        imagen[imagen.length].hide();
+        image(imagen[imagen.length],marcador.x,marcador.y,35,35);
     }
 }
