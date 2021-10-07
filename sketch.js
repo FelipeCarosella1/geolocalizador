@@ -3,10 +3,7 @@ var lon; // variable de longitud
 let canvas;
 let myMap;
 var archivo
-$.ajax({
-    url: 'csv_data.csv',
-    dataType: 'text',
-  }).done(leerArchivo);
+
 
 function setup() {
     canvas = createCanvas(displayWidth,displayHeight); // crea el linezo de 200x200}
@@ -59,15 +56,8 @@ function marcador(){
     image(imagen,marcador.x,marcador.y,35,35);
 }
 
-function leerArchivo(data) {
-  var allRows = data.split(/\r?\n|\r/);
-  for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
-    var rowCells = allRows[singleRow].split(',');
-    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
-      if (!(singleRow === 0)) {
-            print(rowCells[rowCell]);
-       
-      }
-    }
-  } 
+function leerArchivo() {
+    var fs = require('fs'); 
+    var data = fs.readFileSync('cordenadas.csv');
+    console.log(data)
 }
