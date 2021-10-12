@@ -87,12 +87,13 @@ lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CS
 lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
 img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
 // ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
-let newRow = table.addRow();
 for (let i = 0; i < numRows; i++) {
+    let newRow = table.addRow();
     newRow.setNum('lat', lat[i]);
     newRow.setNum('lon', lon[i]);
     newRow.setString('img', img[i]);
 }
+let newRow = table.addRow();
 newRow.setNum('lat', lati);
 newRow.setNum('lon', long);
 newRow.setString('img', "agua_enojada.jpg");
