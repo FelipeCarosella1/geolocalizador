@@ -82,9 +82,6 @@ table.addColumn('lat');
 table.addColumn('lon');
 table.addColumn('img');
 let numRows = datos.getRowCount(); // almacena las filas como datos
-let lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
-let lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
-let img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
 // almacenamos altitud y longitus en una matriz
 lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
 lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
@@ -92,12 +89,12 @@ img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CS
 // ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
 let newRow = table.addRow();
 for (let i = 0; i < numRows; i++) {
-    print(lat[i])
     newRow.setNum('lat', lat[i]);
     newRow.setNum('lon', lon[i]);
     newRow.setString('img', img[i]);
-    print(i)
 }
-
+newRow.setNum('lat', lati);
+newRow.setNum('lon', long);
+newRow.setString('img', "agua_enojada.jpg");
 saveTable(table, 'cordenadas.csv');
 }
