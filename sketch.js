@@ -64,10 +64,16 @@ function marcador(){
     let lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
     // ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
     for (let i = 0; i < numRows; i++) {
-        let marcador = myMap.latLngToPixel(lat[i],lon[i]);
+        
         print(lat[i],lon[i])
         imagen.push(createImg("agua_enojada.jpg"));
         imagen[(imagen.length)-1].hide();
+    print(imagen)
+    for (let i = 0; i < numRows; i++){
+        let marcador = myMap.latLngToPixel(lat[i],lon[i]);
+        for(let j=0;j < imagen.length;j++){
         image(imagen[(imagen.length)-1],marcador.x,marcador.y,35,35);
+        }
+    }
     }
 }
