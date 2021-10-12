@@ -14,10 +14,7 @@ function preload() {
 // el tercer componente es el encabezado del archivo exel de datos csv
 // asi los datos estaran cargados antes de ejecutar las demas instrucciones
   datos = loadTable("cordenadas.csv", "csv", "header"); // almacenamos los datos en la variable
-// almacenamos altitud y longitus en una matriz
-  lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
-  lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
-  img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
+
 }
 
 function setup() {
@@ -65,6 +62,10 @@ function initMap(){
 function marcador(){
     clear()
     let numRows = datos.getRowCount(); // almacena las filas como datos
+    // almacenamos altitud y longitus en una matriz
+  lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
+  lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
+  img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
     // ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
     for (let i = 0; i < numRows; i++) {
         imagen=createImg(img[i]);
@@ -85,6 +86,10 @@ let lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exe
 let img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
 let newRow = table.addRow();
 let numRows = datos.getRowCount(); // almacena las filas como datos
+// almacenamos altitud y longitus en una matriz
+  lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
+  lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
+  img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
 // ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
 for (let i = 0; i < numRows; i++) {
     newRow.setNum('lat', lat[i]);
