@@ -60,6 +60,7 @@ function marcador(){
     clear()
     let imagen = []
     img = createImg("agua_enojada.jpg")
+    img.hide();
     image(img,0,0,35,35);
     let numRows = datos.getRowCount(); // almacena las filas como datos 
     // almacenamos altitud y longitus en una matriz
