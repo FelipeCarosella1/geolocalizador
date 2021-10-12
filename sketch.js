@@ -4,6 +4,8 @@ let canvas;
 let myMap;
 let datos; // variable que almacena los datos del archivo CSV
 let imagen;
+let lat
+let lon
 
 
 function preload() {
@@ -11,6 +13,10 @@ function preload() {
 // el tercer componente es el encabezado del archivo exel de datos csv
 // asi los datos estaran cargados antes de ejecutar las demas instrucciones
   datos = loadTable("cordenadas.csv", "csv", "header"); // almacenamos los datos en la variable
+// almacenamos altitud y longitus en una matriz
+  lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
+  lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
+  img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
 }
 
 function setup() {
@@ -58,10 +64,6 @@ function initMap(){
 function marcador(){
     clear()
     let numRows = datos.getRowCount(); // almacena las filas como datos 
-    // almacenamos altitud y longitus en una matriz
-    let lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
-    let lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
-    let img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
     // ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
     for (let i = 0; i < numRows; i++) {
         imagen=createImg(img[i]);
@@ -74,8 +76,19 @@ function marcador(){
 function gurdar(lati,long){
 let table;
 table = new p5.Table();
-
+table.addColumn('lat');
+table.addColumn('lon');
+table.addColumn('img');
+let lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
+let lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
+let img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
 let newRow = table.addRow();
+// ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
+for (let i = 0; i < numRows; i++) {
+    newRow.setNum('lat', lat[i]);
+    newRow.setNum('lon', lon[i]);
+    newRow.setString('img', img[i]);
+}
 newRow.setNum('lat', lati);
 newRow.setNum('lon', long);
 newRow.setString('img', "agua_enojada.jpg");
