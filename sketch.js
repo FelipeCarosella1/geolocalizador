@@ -77,6 +77,7 @@ table = new p5.Table();
 
 let newRow = table.addRow();
 newRow.setNum('lat', lati);
-newRow.setString('lon', long);
+newRow.setNum('lon', long);
 newRow.setString('img', "agua_enojada.jpg");
+saveTable(table, 'cordenadas.csv');
 }
