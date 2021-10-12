@@ -3,7 +3,7 @@ var lon; // variable de longitud
 let canvas;
 let myMap;
 let datos; // variable que almacena los datos del archivo CSV
-let imagen = []
+
 
 function preload() {
 // el primer comoponete es el archivo csv , el segundo es el tipo de archivo
@@ -58,6 +58,7 @@ function initMap(){
 
 function marcador(){
     clear()
+    let imagen = []
     let numRows = datos.getRowCount(); // almacena las filas como datos 
     // almacenamos altitud y longitus en una matriz
     let lon = datos.getColumn("lng"); // usamos el nombre que figura en la tabla exel CSV 
