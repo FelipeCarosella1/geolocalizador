@@ -92,6 +92,7 @@ lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CS
 img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
 // ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
 for (let i = 0; i < numRows; i++) {
+    print(lat[i])
     newRow.setNum('lat', lat[i]);
     newRow.setNum('lon', lon[i]);
     newRow.setString('img', img[i]);
