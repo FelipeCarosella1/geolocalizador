@@ -6,7 +6,7 @@ let datos; // variable que almacena los datos del archivo CSV
 let imagen;
 let lat;
 let lon;
-let numRows
+
 
 
 function preload() {
@@ -18,7 +18,6 @@ function preload() {
   lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
   lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
   img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
-  numRows = datos.getRowCount(); // almacena las filas como datos
 }
 
 function setup() {
@@ -64,7 +63,8 @@ function initMap(){
 }
 
 function marcador(){
-    clear() 
+    clear()
+    let numRows = datos.getRowCount(); // almacena las filas como datos
     // ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
     for (let i = 0; i < numRows; i++) {
         imagen=createImg(img[i]);
@@ -84,6 +84,7 @@ let lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exe
 let lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
 let img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
 let newRow = table.addRow();
+let numRows = datos.getRowCount(); // almacena las filas como datos
 // ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
 for (let i = 0; i < numRows; i++) {
     newRow.setNum('lat', lat[i]);
