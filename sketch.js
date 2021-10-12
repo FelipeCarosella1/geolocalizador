@@ -3,6 +3,7 @@ var lon; // variable de longitud
 let canvas;
 let myMap;
 let datos; // variable que almacena los datos del archivo CSV
+let imagen;
 
 
 function preload() {
@@ -58,17 +59,17 @@ function initMap(){
 
 function marcador(){
     clear()
-    let imagen = []
+    
     let numRows = datos.getRowCount(); // almacena las filas como datos 
     // almacenamos altitud y longitus en una matriz
     let lon = datos.getColumn("lng"); // usamos el nombre que figura en la tabla exel CSV 
     let lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
     // ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
     for (let i = 0; i < numRows; i++) {
-        imagen.push(createImg("agua_enojada.jpg"));
-        imagen[(imagen.length)-1].hide();
+        imagen=createImg("agua_enojada.jpg");
+        imagen.hide();
         let marcador = myMap.latLngToPixel(lat[i],lon[i]);
-        image(imagen[(imagen.length)-1],marcador.x,marcador.y,35,35);
+        image(imagen,marcador.x,marcador.y,35,35);
         print(lat[i],lon[i])
         
     }
