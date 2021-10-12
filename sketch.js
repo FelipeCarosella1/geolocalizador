@@ -69,7 +69,7 @@ function marcador(){
         imagen[(imagen.length)-1].hide();
         let marcador = myMap.latLngToPixel(lat[i],lon[i]);
         image(imagen[(imagen.length)-1],marcador.x,marcador.y,35,35);
-        pritn(marcador.x,marcador.y)
+        print(marcador.x,marcador.y)
     }
 }
 
