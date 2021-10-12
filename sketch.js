@@ -22,9 +22,8 @@ function setup() {
         navigator.geolocation.getCurrentPosition(async position => {
             // console.log(position);
             lati = position.coords.latitude; // obtenemos latitud
-            lon = position.coords.longitude; // obtenermos longitud
-            console.log(lati.toFixed(2)); // visualizamos latitud en modo progrmador
-            console.log(lon); // visualizamos longitud en modo programador 
+            long = position.coords.longitude; // obtenermos longitud
+            initMap(lati,long)
             });
     } else {
         /* geolocation IS NOT available */
@@ -40,10 +39,10 @@ textSize(16); // fija el tamaño del texto
 text("latitud",20,30); // imprime el texto en posicion x, y 
 text(lati,85,30); // imprime variable en posicion x,y
 text("longitud",20,50); // imprime el texto en posicion x,y
-text(lon,85,50); // imprime variable en posicion x,y
+text(long,85,50); // imprime variable en posicion x,y
   }
 
-function initMap(){
+function initMap(lati,long){
     const mappa = new Mappa('Leaflet');;
     const options = {
     lat: -34.6075682,
