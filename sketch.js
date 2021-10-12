@@ -81,18 +81,18 @@ table = new p5.Table();
 table.addColumn('lat');
 table.addColumn('lon');
 table.addColumn('img');
+let numRows = datos.getRowCount(); // almacena las filas como datos
 let lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
 let lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
 let img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
 let newRow = table.addRow();
-let numRows = datos.getRowCount(); // almacena las filas como datos
 // almacenamos altitud y longitus en una matriz
 lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
 lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
 img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
 // ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
 for (let i = 0; i < numRows; i++) {
-    print(lat[i])
+
     newRow.setNum('lat', lat[i]);
     newRow.setNum('lon', lon[i]);
     newRow.setString('img', img[i]);
