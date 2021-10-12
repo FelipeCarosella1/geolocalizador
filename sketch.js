@@ -30,8 +30,6 @@ function setup() {
         console.log('geolocation NO funcionando');
         console.log(leerDatos())
     };
-    console.log(lon);
-    initMap(lati,lon)
     }
 
 function draw () {
