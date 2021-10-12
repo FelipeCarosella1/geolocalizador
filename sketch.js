@@ -23,12 +23,13 @@ function setup() {
             // console.log(position);
             lati = position.coords.latitude; // obtenemos latitud
             long = position.coords.longitude; // obtenermos longitud
-            initMap(lati,long)
+            gurdar(lati,long)
             });
     } else {
         /* geolocation IS NOT available */
         console.log('geolocation NO funcionando');
         console.log(leerDatos())
+        initMap()
     };
     }
 
@@ -40,7 +41,7 @@ text("longitud",20,50); // imprime el texto en posicion x,y
 text(long,85,50); // imprime variable en posicion x,y
   }
 
-function initMap(lati,long){
+function initMap(){
     const mappa = new Mappa('Leaflet');;
     const options = {
     lat: -34.6075682,
@@ -56,7 +57,6 @@ function initMap(lati,long){
 
 function marcador(){
     clear()
-    
     let numRows = datos.getRowCount(); // almacena las filas como datos 
     // almacenamos altitud y longitus en una matriz
     let lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
@@ -71,3 +71,12 @@ function marcador(){
     }
 }
 
+function gurdar(lati,long){
+let table;
+table = new p5.Table();
+
+let newRow = table.addRow();
+newRow.setNum('lat', lati);
+newRow.setString('lon', long);
+newRow.setString('img', "agua_enojada.jpg");
+}
