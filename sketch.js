@@ -37,8 +37,8 @@ function setup() {
         /* geolocation IS NOT available */
         console.log('geolocation NO funcionando');
         console.log(leerDatos())
-        initMap()
     };
+    initMap()
     }
 
 function draw () {
