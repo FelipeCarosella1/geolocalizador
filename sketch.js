@@ -63,9 +63,9 @@ function marcador(){
     clear()
     let numRows = datos.getRowCount(); // almacena las filas como datos
     // almacenamos altitud y longitus en una matriz
-  lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
-  lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
-  img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
+    let lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
+    let lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
+    let img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
     // ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
     for (let i = 0; i < numRows; i++) {
         imagen=createImg(img[i]);
@@ -87,14 +87,15 @@ let img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exe
 let newRow = table.addRow();
 let numRows = datos.getRowCount(); // almacena las filas como datos
 // almacenamos altitud y longitus en una matriz
-  lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
-  lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
-  img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
+let lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
+let lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
+let img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
 // ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
 for (let i = 0; i < numRows; i++) {
     newRow.setNum('lat', lat[i]);
     newRow.setNum('lon', lon[i]);
     newRow.setString('img', img[i]);
+    print(i)
 }
 newRow.setNum('lat', lati);
 newRow.setNum('lon', long);
