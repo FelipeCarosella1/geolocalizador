@@ -59,9 +59,6 @@ function initMap(){
 function marcador(){
     clear()
     let imagen = []
-    img = createImg("agua_enojada.jpg")
-    img.hide();
-    image(img,0,0,35,35);
     let numRows = datos.getRowCount(); // almacena las filas como datos 
     // almacenamos altitud y longitus en una matriz
     let lon = datos.getColumn("lng"); // usamos el nombre que figura en la tabla exel CSV 
@@ -72,11 +69,7 @@ function marcador(){
         imagen[(imagen.length)-1].hide();
         let marcador = myMap.latLngToPixel(lat[i],lon[i]);
         image(imagen[(imagen.length)-1],marcador.x,marcador.y,35,35);
-        
-        print((imagen.length)-1)
-    print(imagen)
-
-        
+        pritn(marcador.x,marcador.y)
     }
 }
 
