@@ -62,17 +62,15 @@ function marcador(){
     
     let numRows = datos.getRowCount(); // almacena las filas como datos 
     // almacenamos altitud y longitus en una matriz
-    let lon = datos.getColumn("lng"); // usamos el nombre que figura en la tabla exel CSV 
     let lat = datos.getColumn("lat"); // usamos el nombre que figura en al tabla exel CSV
-    let lat = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
+    let lon = datos.getColumn("lon"); // usamos el nombre que figura en la tabla exel CSV 
+    let img = datos.getColumn("img"); // usamos el nombre que figura en al tabla exel CSV
     // ciclo repetitivo que recorra todos los datos desde 0 hasta el valor de menor de filas 
     for (let i = 0; i < numRows; i++) {
         imagen=createImg(img[i]);
         imagen.hide();
         let marcador = myMap.latLngToPixel(lat[i],lon[i]);
-        image(imagen,marcador.x,marcador.y,35,35);
-        print(lat[i],lon[i])
-        
+        image(imagen,marcador.x,marcador.y,35,35);        
     }
 }
 
