@@ -98,8 +98,6 @@ for (let i = 0; i < numRows; i++) {
     newRow.setString('img', img[i]);
     print(i)
 }
-newRow.setNum('lat', lati);
-newRow.setNum('lon', long);
-newRow.setString('img', "agua_enojada.jpg");
+
 saveTable(table, 'cordenadas.csv');
 }
