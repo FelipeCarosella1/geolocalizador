@@ -55,7 +55,7 @@ function initMap(){
     style: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
     }
     myMap = mappa.tileMap(options);
-    myMap.overlay(rectangulo);
+    myMap.overlay(canvas);
     marcador();
     myMap.onChange(marcador);
 }
