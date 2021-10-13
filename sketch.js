@@ -19,6 +19,7 @@ function preload() {
 
 function setup() {
     canvas = createCanvas(displayWidth,displayHeight); // crea el linezo de 200x200}
+    rectangulo = rec(0,0,100,100)
     if('geolocation' in navigator) {
         /* geolocation is available */
         console.log('geolocation funcionando');
@@ -54,7 +55,7 @@ function initMap(){
     style: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
     }
     myMap = mappa.tileMap(options);
-    myMap.overlay(canvas-100);
+    myMap.overlay(rectangulo);
     marcador();
     myMap.onChange(marcador);
 }
